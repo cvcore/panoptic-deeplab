@@ -5,7 +5,7 @@ import torch
 from segmentation.model import build_segmentation_model_from_cfg
 from segmentation.config import config, update_config
 
-CFG_PATH_DEFAULT = str(pathlib.Path(__file__).parent.joinpath('configs').joinpath('panoptic_deeplab_R50_os32_cityscapes.yaml').resolve())
+CFG_PATH_DEFAULT = str(pathlib.Path(__file__).parent.joinpath('configs').joinpath('panoptic_deeplab_R50_os32_cityscapes_no_instance.yaml').resolve())
 MODEL_PATH_DEFAULT = str(pathlib.Path(__file__).parent.joinpath('saved_models').joinpath('panoptic_deeplab_R50_os32_cityscapes.pth').resolve())
 
 def _use_default_args():
@@ -33,7 +33,7 @@ def build_default_model():
     if 'state_dict' in model_weights.keys():
         model_weights = model_weights['state_dict']
         print('Evaluating a intermediate checkpoint.')
-    model.load_state_dict(model_weights, strict=True)
+    model.load_state_dict(model_weights, strict=False)
     print('Test model loaded from {}'.format(MODEL_PATH_DEFAULT))
 
     return model

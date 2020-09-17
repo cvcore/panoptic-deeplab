@@ -260,7 +260,7 @@ def main():
                     raw_image = read_image(fname, 'RGB')
                 else:
                     NotImplementedError("Inference on video is not supported yet.")
-                
+
                 # pad image
                 raw_shape = raw_image.shape[:2]
                 raw_h = raw_shape[0]
@@ -305,7 +305,7 @@ def main():
                             'Network Time: {net_time.val:.3f}s ({net_time.avg:.3f}s)\t'
                             'Post-processing Time: {post_time.val:.3f}s ({post_time.avg:.3f}s)\t'.format(
                              i, len(input_list), net_time=net_time, post_time=post_time))
-                
+
                 # save predictions
                 semantic_pred = semantic_pred.squeeze(0).cpu().numpy()
                 panoptic_pred = panoptic_pred.squeeze(0).cpu().numpy()
