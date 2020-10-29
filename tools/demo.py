@@ -186,7 +186,7 @@ def main():
         if 'state_dict' in model_weights.keys():
             model_weights = model_weights['state_dict']
             logger.info('Evaluating a intermediate checkpoint.')
-        model.load_state_dict(model_weights, strict=True)
+        model.load_state_dict(model_weights, strict=False)
         logger.info('Test model loaded from {}'.format(model_state_file))
     else:
         if not config.DEBUG.DEBUG:
