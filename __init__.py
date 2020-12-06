@@ -2,8 +2,8 @@ import pathlib
 import argparse
 import torch
 
-from segmentation.model import build_segmentation_model_from_cfg
-from segmentation.config import config, update_config
+from .segmentation.model import build_segmentation_model_from_cfg
+from .segmentation.config import config, update_config
 
 CFG_PATH_DEFAULT = str(pathlib.Path(__file__).parent.joinpath('configs').joinpath('panoptic_deeplab_R50_os32_cityscapes_no_instance.yaml').resolve())
 MODEL_PATH_DEFAULT = str(pathlib.Path(__file__).parent.joinpath('saved_models').joinpath('panoptic_deeplab_R50_os32_cityscapes.pth').resolve())

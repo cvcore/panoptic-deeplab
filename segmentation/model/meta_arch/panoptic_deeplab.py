@@ -10,8 +10,8 @@ from torch import nn
 from torch.nn import functional as F
 
 from .base import BaseSegmentationModel
-from segmentation.model.decoder import PanopticDeepLabDecoder
-from segmentation.utils import AverageMeter
+from ..decoder import PanopticDeepLabDecoder
+from ...utils import AverageMeter
 
 
 __all__ = ["PanopticDeepLab"]

@@ -9,8 +9,8 @@ import torch
 from torch import nn
 
 from .base import BaseSegmentationModel
-from segmentation.model.decoder import DeepLabV3PlusDecoder
-from segmentation.utils import AverageMeter
+from ..decoder import DeepLabV3PlusDecoder
+from ...utils import AverageMeter
 
 
 __all__ = ["DeepLabV3Plus"]
