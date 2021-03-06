@@ -21,7 +21,7 @@ def _update_args(model_path, cfg_path):
                         nargs=argparse.REMAINDER)
 
 
-    args = parser.parse_args(['--cfg', CFG_PATH_DEFAULT, 'TEST.MODEL_FILE', MODEL_PATH_DEFAULT])
+    args = parser.parse_args(['--cfg', cfg_path, 'TEST.MODEL_FILE', model_path])
 
     update_config(config, args)
 
