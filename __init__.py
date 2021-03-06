@@ -29,7 +29,7 @@ def build_default_model(model_path=MODEL_PATH_DEFAULT, cfg_path=CFG_PATH_DEFAULT
     _update_args(model_path, cfg_path)
     model = build_segmentation_model_from_cfg(config)
 
-    model_weights = torch.load(model_path)
+    model_weights = torch.load(model_path, map_location=torch.device('cpu'))
     if 'state_dict' in model_weights.keys():
         model_weights = model_weights['state_dict']
         print('Evaluating a intermediate checkpoint.')
