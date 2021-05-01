@@ -1,7 +1,8 @@
-from distutils.core import setup
+from setuptools import setup, find_packages
 
 setup(
-    name='PanopticDeeplab',
-    version='0.1',
-    packages=['panoptic_deeplab']
+    name='Panoptic-Deeplab',
+    version='1.0',
+    description='Panoptic Deeplab',
+    packages=find_packages()
 )
